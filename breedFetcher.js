@@ -12,13 +12,5 @@ request(url, (error, response, body) => {
   }
   const data = JSON.parse(body);
   console.log(data[0].description);
-
-  // console.log("error: ", error)
-  // console.log("response: ", response)
-  // console.log("body: ", data)
-  // console.log(data[0].description)
-  // console.log(typeof data)
-  
-  
 });
 
