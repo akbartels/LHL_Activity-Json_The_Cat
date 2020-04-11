@@ -1,14 +1,14 @@
 const request = require('request');
-const searchCat = process.argv[2];
-const url = `https://api.thecatapi.com/v1/breeds/search?q=${searchCat}`;
+const breedName = process.argv[2];
+const url = `https://api.thecatapi.com/v1/breeds/search?q=${breedName}`;
 
 
 request(url, (error, response, body) => {
-  if (!searchCat) {
-    return console.log("Did you include a cat type?");
+  if (!breedName) {
+    return console.log("Did you add a breed name?");
   }
   if (error) {
-    console.log("\n******THERE WAS AN ERROR******\n\n", error);
+    return console.log("**ERROR**: ", error);
   }
   const data = JSON.parse(body);
   console.log(data[0].description);
